@@ -1,0 +1,15 @@
+// prcaticandoFinal.cpp : Defines the entry point for the console application.
+//Mariam Atanacio Maldonado
+#include<iostream>
+using namespace std;
+int main()
+{float MAM,H,B;
+ cout<<"Altura "<<endl;
+ cin>>H;
+ cout<<"base "<<endl;
+ cin>>B;
+	MAM=(B*H)/2;
+	cout<<"El area del triangulo es "<<MAM<<endl;
+	system ("pause");
+	return 0;
+}
