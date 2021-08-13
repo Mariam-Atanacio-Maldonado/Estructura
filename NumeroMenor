@@ -1,0 +1,25 @@
+//compara dos numeros para mostrar el menor
+#include <iostream>
+using namespace std;
+int minimo (int a, int b);
+int main()
+{ int n1,n2,menor;
+   cout<<"digite 2 numeros"<<endl;
+   cin>>n1>>n2;
+   menor = minimo(n1,n2);
+   cout<<"el menor de los dos numero es: "<<menor<<endl;
+   system ("pause");
+	return 0;
+}
+int minimo (int a, int b)
+{ int nuMenor;
+  if (a<b)
+  {
+	  nuMenor=a;
+  }
+  else
+  {
+	  nuMenor=b;
+  }
+  return nuMenor;
+}
