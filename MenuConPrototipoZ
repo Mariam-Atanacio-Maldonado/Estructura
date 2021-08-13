@@ -1,0 +1,89 @@
+// Trabajo: Calculadora de figuras geometricas con prototipos
+//Grupo 4: Atanacio
+//         Rocha
+#include "stdafx.h"
+#include<iostream>
+#include "math.h"
+using namespace std;
+float areaRect(float b, float h);
+float areaCua(float a);
+float AreaCir(float a);
+float AreaTriang(float b, float h);
+int main (void)
+{
+int op,a,c,d,N,i; float b,h,area, B, x1, x2, R,C, x;
+op=0;
+while(op !=5)
+{
+	cout<<"        M E N U "<<endl;
+	cout<<"        --------"<<endl;
+	cout<<" 1. Area Del resctangulo"<<endl;
+	cout<<" 2. Area Del Cuadrado"<<endl;
+	cout<<" 3. Area Del Circulo"<<endl;
+	cout<<" 4. Area Del triangulo"<<endl;
+	cout<<" 5. FIN"<<endl;
+	cout<<"Opcion:"<<endl;
+    cin>>op;
+    switch(op)
+	{
+    	case 1:
+		 {
+    	cout<<"base y altura:"<<endl;
+    	cin>>b>>h;
+    	area= areaRect(b,h);
+    	cout<<"Area rectangular: "<<area<<endl;
+	    break; 
+	    }
+		case 2:
+		{cout<<"lado:";cin>>a;
+	          area=areaCua(a); cout<<"Area cuadrado:"<<area<<endl;
+			  break;
+		}
+	    case 3:
+		{cout<<"radio:";cin>>a;
+	          area=AreaCir(a); cout<<"Area circulo:"<<area<<endl;
+	          break;
+		}
+		case 4:
+		 {
+    	cout<<"base y altura:"<<endl;
+    	cin>>b>>h;
+    	area=AreaTriang(b,h);
+    	cout<<"Area del triangulo: "<<area<<endl;
+	    break; 
+	    }
+    	case 5:
+		{
+		cout<<"Gracias"<<endl;
+	    break;
+	    }
+    	default: cout<<"opcion no valida digite del 1 al 5"<<endl;  
+    	
+	}
+	
+}	
+	return 0;
+}
+//prototipos
+float areaRect(float b, float h)
+{ float area;
+area=b*h;
+return area;
+}
+ float areaCua(float a)
+ {float area;
+	 area=a*a;
+	 return area;
+ }
+ float AreaCir(float a)
+ {float area;
+ area=3.1416*a*a;
+ return area;
+ }
+
+ float AreaTriang(float b, float h)
+ {float area;
+ area=(b*h)/2;
+ return area;
+ }
+ 
