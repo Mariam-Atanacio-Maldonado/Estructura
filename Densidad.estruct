@@ -1,0 +1,150 @@
+//3.	Densidad y volumen de cuerpos regulares
+
+//Densidad.h
+
+#pragma once
+class Densidad
+{
+	private://atributos
+		float densidad;
+		float volumen;
+		float masa;
+		float altura;
+public:
+	Densidad(void);
+	~Densidad(void);
+	void esfera(float R);
+    void piramide (float b);
+    void cilindro (float R);
+    void cubo (float a);
+};
+
+//Densidad.cpp
+
+#include "StdAfx.h"
+#include "Densidad.h"
+#include <iostream>
+using namespace std;
+
+Densidad::Densidad(void)
+{
+}
+
+
+Densidad::~Densidad(void)
+{
+}
+
+void Densidad::esfera(float R)
+{    
+			  volumen=(R*R*R*4*3.1416)/3;
+			  cout<<"ingrese la masa(gr) de la esfera: "<<endl;
+			  cin>>masa;
+			  densidad=masa/volumen;
+			  cout<<"volumen de la esfera==> "<<volumen<<" cm3"<<endl;
+			  cout<<"Densidad de la esfera==> "<<densidad<<" gr/cm3"<<endl;
+			  
+}
+
+void Densidad::piramide (float b)
+{
+	         cout<<"ingrese altura(cm): "<<endl;
+			 cin>>altura;
+			 volumen=(b*b*altura)/3;
+			 cout<<"ingrese la masa(gr) de la piramide: "<<endl;
+			 cin>>masa;
+			 densidad=masa/volumen;
+			 cout<<"volumen de la piramide==> "<<volumen<<" cm3"<<endl;
+			 cout<<"Densidad de la piramide==> "<<densidad<<" gr/cm3"<<endl; 
+}
+
+void Densidad::cilindro (float R)
+{
+	          cout<<"ingrese altura(cm): "<<endl;
+			  cin>>altura;
+			  volumen=altura*3.1416*R*R;
+			  cout<<"ingrese la masa del cilindro(gr): "<<endl;
+			  cin>>masa;
+			  densidad=masa/volumen;
+			  cout<<"volumen del cilindro==> "<<volumen<<" cm3"<<endl;;
+			  cout<<"Densidad del cilindro==> "<<densidad<<" gr/cm3"<<endl;
+}
+
+void Densidad::cubo (float a)
+{
+	          volumen=a*a*a;
+			  cout<<"ingrese la masa del cubo(gr): "<<endl;
+			  cin>>masa;
+			  densidad=masa/volumen;
+			  cout<<"volumen del cubo==> "<<volumen<<" cm3"<<endl;
+			  cout<<"Densidad del cubo==> "<<densidad<<" gr/cm3"<<endl;
+}
+
+
+
+//Densidad.estruct.cpp
+
+#include "stdafx.h"
+#include <iostream>
+#include "Densidad.h"
+using namespace std;
+#include "conio.h"
+int main()
+{char s; float r,b,a;
+ Densidad calculando;
+ s='s';
+ while (s=='s')
+ {
+    s=' ';
+	cout<<" -----------------------------------------"<<endl;
+	cout<<"| VOLUMEN Y DENSIDAD DE CUERPOS REGULARES |"<<endl;
+	cout<<" -----------------------------------------"<<endl;
+	cout<<"Esfera   ==> e "<<endl;
+	cout<<"Piramide ==> p "<<endl;
+	cout<<"Cilindro ==> c "<<endl;
+	cout<<"Cubo     ==> b "<<endl;
+	cout<<"Ingrese el cuerpo geometrico (Marque la incial segun desee): "<<endl;
+	cin>>s;
+	if (s=='e')
+	      {
+			  cout<<"- Esfera - "<<endl;
+			  cout<<"ingrese el radio(cm) de la esfera: "<<endl;
+			  cin>>r;
+			  calculando.esfera(r);
+	      }
+	else
+		if (s=='p')
+	      {
+			 cout<<"- Piramide de base cuadrangular - "<<endl;
+			 cout<<"ingrese arista de la base(cm): "<<endl;
+			 cin>>b;
+			 calculando.piramide(b);
+	      }
+		else
+			if (s=='c')
+	      {
+			  cout<<"- Cilindro - "<<endl;
+			  cout<<"ingrese radio(cm): "<<endl;
+			  cin>>r;
+			 calculando.cilindro (r);
+			  
+	      }
+	       
+	           else 
+				   if (s=='b')
+	      {
+			  cout<<"- Cubo - "<<endl;
+			  cout<<"ingrese arista(cm): "<<endl;
+			  cin>>a;
+			  calculando.cubo (a);
+			  
+	      }
+	             else
+					 
+				 {cout<<"NO DIGITO NINGUNA OPCION CORRESPONDIENTE!"<<endl;}
+					 cout<<"DESEA HACER ALGUN CALCULO MAS?: (s/n)"<<endl;
+					 cin>>s;
+ }
+	
+	
+}
