@@ -1,0 +1,63 @@
+//1.	Invierte el orden de los vectores
+//Horario.h
+#pragma once
+class Horario
+{
+	private://atributos
+	int hora;
+	int minuto;
+	int seg;
+ public:
+	Horario(void);
+	~Horario(void);
+	void convertidor (int h,int m,int s);
+};
+
+//Horario.cpp
+#include "StdAfx.h"
+#include "Horario.h"
+#include <iostream>
+using namespace std;
+
+Horario::Horario(void)
+{
+}
+
+
+Horario::~Horario(void)
+{
+}
+
+void Horario::convertidor (int h,int m,int s)
+{
+if(h>12)
+     {h=h-12;
+     cout<<"la hora es: "<<h<<" horas "<<m<<" minutos "<<s<<" segundos "<<"PM"<<endl;
+	 }
+	 else 
+	 {
+     cout<<"la hora es: "<<h<<" horas "<<m<<" minutos "<<s<<" segundos "<<"AM"<<endl;
+	 }
+}
+
+
+
+//convert.HorasEstruct
+
+#include "stdafx.h"
+#include <iostream>
+#include "Horario.h"
+using namespace std;
+#include "conio.h"
+int main()
+{int h, m, s; 
+    Horario convierte;
+     cout<<"Ingrese hora: ";
+	 cin>>h;
+     cout<<"Ingrese minutos: ";
+	 cin>>m;
+     cout<<"Ingrese segundos: ";
+	 cin>>s;
+	 convierte.convertidor (h,m,s);
+	getch();
+}
