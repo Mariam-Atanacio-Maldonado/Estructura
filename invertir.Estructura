@@ -1,0 +1,77 @@
+//2.	Invierte el orden de los vectores
+//Invertir.h
+#pragma once
+#define MAX 100 
+class Invertir
+{
+private://atributos
+	int V[MAX];
+	
+public://metodo
+	Invertir(void);
+	~Invertir(void);
+	void InvertirVec(int V[],int n);
+    void ImprimaVec(int V[], int n);
+	void LeerVec(int V[], int n);
+};
+
+
+
+//invertir.cpp
+#include "StdAfx.h"
+#include "Invertir.h"
+#include <iostream>
+using namespace std;
+
+
+Invertir::Invertir(void)
+{
+}
+
+
+Invertir::~Invertir(void)
+{
+}
+
+void Invertir::LeerVec(int V[], int n)
+{int i;
+	for(i=0;i<n;i++)
+    {   cout<<i+1<<") ";
+		cin>>V[i];
+    }
+}
+void Invertir::InvertirVec(int V[],int n)
+{int Aux,i;
+  for(i=0;i<n/2;i++)
+	{ Aux=V[i];
+	  V[i]=V[n-1-i];
+	  V[n-1-i]=Aux;
+     }
+}
+
+void Invertir::ImprimaVec(int V[], int n)
+{int i;
+	for(i=0;i<n;i++)
+    { 
+		cout<<V[i]<<"  ";
+    }
+	cout<<endl;
+}
+
+//invertir.Estructura
+#include "stdafx.h"
+#include <iostream>
+#include "Invertir.h"
+using namespace std;
+#include "conio.h"
+int main(void)
+{int n;
+int V[MAX];
+    Invertir invirtiendo;
+    cout<<"Tamaño del vector:";cin>>n;
+	invirtiendo.LeerVec(V,n);  
+    invirtiendo.InvertirVec(V,n); 
+   cout<<"vector invertido"<<endl;
+   invirtiendo.ImprimaVec(V,n);
+	getch();
+}
